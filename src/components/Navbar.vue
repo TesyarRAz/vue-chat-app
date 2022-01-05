@@ -8,6 +8,10 @@
       <b-navbar-nav>
         <b-nav-item to="/room">Room</b-nav-item>
       </b-navbar-nav>
+
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item to="/user">User</b-nav-item>
+      </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>

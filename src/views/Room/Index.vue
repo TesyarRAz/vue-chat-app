@@ -14,7 +14,7 @@
 <script>
 import Room from './Room.vue'
 import NewRoom from './NewRoom.vue'
-import firestore from '@/database/firestore'
+import { firestore } from '@/database/firestore'
 
 export default {
   data: () => ({
@@ -25,7 +25,7 @@ export default {
     NewRoom
   },
   firestore: {
-    rooms: firestore.collection('rooms')
+    rooms: firestore.collection('rooms').orderBy('createdAt', 'desc')
   }
 }
 </script>

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import firestore from "@/database/firestore";
+import { firestore, Timestamp }  from "@/database/firestore";
 
 let rooms = firestore.collection("rooms")
 
@@ -34,7 +34,10 @@ export default {
       Object.assign(this.$data, this.$options.data());
     },
     store() {
-      rooms.add(this.room);
+      rooms.add({
+        ...this.room,
+        createdAt: Timestamp.now()
+      });
 
       this.reset();
     },

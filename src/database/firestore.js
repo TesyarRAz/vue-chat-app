@@ -3,7 +3,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-const firestore = firebase
+export const firestore = firebase
   .initializeApp({
     apiKey: "AIzaSyC1VJ4FhFPfSubYp2uN-6KlblpQuuiLqgY",
     authDomain: "chat-app-8fdc9.firebaseapp.com",
@@ -16,7 +16,5 @@ const firestore = firebase
   .firestore();
 
 // Export types that exists in Firestore - Uncomment if you need them in your app
-// const { Timestamp, GeoPoint } = firebase.firestore
-// export { Timestamp, GeoPoint }
-
-export default firestore;
+const { Timestamp, GeoPoint } = firebase.firestore
+export { Timestamp, GeoPoint }
